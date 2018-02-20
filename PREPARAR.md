@@ -57,8 +57,7 @@ Uma vez que você tenha instalado o Git, deve passar para a próxima atividade,
 que é implementar um contador de palavras a ser entregue usando o próprio Git.
 Se você nunca usou o Git ou o GitHub, pode seguir o
 [vídeo-tutorial](https://youtu.be/QnIuS2rbF38) sobre esse assunto. Caso
-contrário, navegue diretamente para o [repositório da
-tarefa](http://www.github.com/EAxxx/contador-de-palavras) e siga as instruções
+contrário, navegue diretamente para o repositório da terefa e siga as instruções
 no diretório `doc`.
 
 Essencialmente, o que faremos é disponibilizar a tarefa em um repositório. Cada
@@ -68,7 +67,6 @@ automático baixará todos os repositórios e executará scripts de teste
 automático.
 
 Depois de ter completado todas essas tarefas e estar confiante de que seu
-ambiente computacional funciona, coloque seu nome, e-mail, RA e username do
-github na [planilha de
-alunos](https://docs.google.com/spreadsheets/d/1hdRJ6x1k8z7EWyCopSWsbs0XxGkAuuMX3qWbBn8uLVE/edit?usp=sharing).
+ambiente computacional funciona, coloque seu e-mail e username do
+github na planilha de alunos, disponível do Google Classroom da disciplina.
 
