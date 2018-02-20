@@ -20,9 +20,6 @@ Prazo | Tarefa
  09/03    | [Instalar o ambiente computacional](PREPARAR.md) e laboratório: [Somador de Números](http://www.github.com/EAxxx/somador_de_numeros)
  23/03    | [CamelCaseConverter](https://github.com/EAxxx/camelcaseconverter)
  06/04    | [PythonListParser](https://github.com/EAxxx/python_list_parser)
- 02/10    | [Contador
- Multiprocesso](https://github.com/EAxxx/multiprocess_counter)
- 02/10    | [Contador
- Multithread](https://github.com/EAxxx/multithread_counter)
- 02/10    | [Ordenação
- Multithread](https://github.com/EAxxx/multithread_sort)
+ 02/10    | [Contador Multiprocesso](https://github.com/EAxxx/multiprocess_counter)
+ 02/10    | [Contador Multithread](https://github.com/EAxxx/multithread_counter)
+ 02/10    | [Ordenação Multithread](https://github.com/EAxxx/multithread_sort)
