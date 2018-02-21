@@ -1,0 +1,135 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{Madrid}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{array}
+
+\title[05-Análise Léxica]{Análise Léxica}
+\author{Tiago F. Tavares}
+\institute{FEEC -- UNICAMP}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Uncomment these lines for an automatically generated outline.
+%\begin{frame}{Outline}
+%  \tableofcontents
+%\end{frame}
+
+\section{Introdução}
+
+\begin{frame}{Revisão...}
+  \Large
+  \begin{enumerate}
+  \item Máquinas de estado podem reconhecer categorias específicas de cadeias de
+    caracteres,
+  \item Expressões regulares são formas válidas de expressar máquinas de estados
+    que reconhecem caracteres.
+  \end{enumerate}
+\end{frame}
+
+
+\begin{frame}{Objetivos}
+  \Large
+  \begin{itemize}
+    \item Entender o que é e como usar o Lex.
+    \item Entender a sintaxe do Lex.
+    \item Entender como compilar programas usando Lex.
+    \item Construir uma pequena aplicação usando Lex.
+    \item Entender o que é análise léxica.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Exercício}
+  \centering
+  No código abaixo, identifique os liteirais inteiros e os números em ponto
+  flutuante:
+
+  \begin{verbatim}
+  a = 50;
+  b = 50.5 + 20;
+  c = 60.2;
+  \end{verbatim}
+
+\end{frame}
+
+\begin{frame}{Exercício}
+  Ordene as instruções abaixo de forma a permitir reconhecer floats e inteiros
+  num código:
+  \begin{enumerate}
+    \item Aplicar expressão regular \textsc{[0-9]+}. Caso sucesso...
+    \item Aplicar expressão regular \textsc{[0-9]+[.][0-9]*}. Caso sucesso...
+    \item Encontrei inteiro
+    \item Encontrei float
+    \item Caso contrário...
+    \item Falha
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Live Coding}
+  \centering
+  \large
+  Lex é uma ferramenta que permite programar reconhecedores de tipos e criar
+  programas que têm comportamentos distintos ao receber entradas de tipos
+  diferentes.
+  \begin{verbatim}
+
+  %{
+      /* Codigo C
+  %}
+
+     <----  definicoes
+
+  %%
+                 <--- Regras
+  %%
+  /* Codigo C */
+
+  \end{verbatim}
+
+\end{frame}
+
+\begin{frame}{Exercício}
+  \centering
+  \large
+  Proponha uma modificação ao programa feito ao vivo que permita somar todos os
+  literais tipo int encontrados na string de entrada.
+\end{frame}
+
+\begin{frame}{Análise léxica de C}
+\large
+Mostre as expressões regulares capazes de reconhecer:
+  \begin{enumerate}
+    \item Caractere ponto-e-vírgula
+    \item Palavras reservadas e operadores (int, float, +,  etc.)
+    \item Números inteiros
+    \item Números float
+    \item Identificadores (começa com um caractere ascii seguido de qualquer
+      número de caracteres alfanuméricos)
+    \item Expressões matemáticas válidas
+  \end{enumerate}
+
+\end{frame}
+
+
+
+\end{document}

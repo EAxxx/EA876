@@ -1,0 +1,176 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{Madrid}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{array}
+
+\title[04-Expressões Regulares]{Expressões Regulares}
+\author{Tiago F. Tavares}
+\institute{FEEC -- UNICAMP}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Uncomment these lines for an automatically generated outline.
+%\begin{frame}{Outline}
+%  \tableofcontents
+%\end{frame}
+
+\section{Introdução}
+
+\begin{frame}{Revisão...}
+  \Large
+  \begin{enumerate}
+  \item Máquinas de estado podem reconhecer categorias específicas de cadeias de
+    caracteres
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Objetivos}
+  \Large
+  \begin{itemize}
+  \item Entender o que são gramáticas regulares.
+  \item Entender como gramáticas regulares podem ser usadas para reconhecer
+    cadeias de caracteres.
+  \item Usar sintaxe POSIX de gramáticas regulares
+  \item Entender a relação um-para-um entre gramáticas regulares e máquinas de
+  estado
+  \item Aplicar gramáticas regulares para reconhecer cadeias de caracteres.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Exercício}
+  \centering
+  No texto abaixo, identifique os verbos no gerúndio, os números inteiros e os
+  usernames do twitter:
+
+  \vspace{0.5in}
+
+  \textit{Passei 2 horas upando o código do @maddoghall}.
+\end{frame}
+
+\begin{frame}{Reflexão (I)}
+  \centering
+  \Large
+  Pense no verbo no gerúndio: \textit{upando}. Ele não está no dicionário (ou ao
+  menos não estava até bem pouco tempo atrás). Por que, mesmo sem estar no
+  dicionário, é possível saber que é um verbo no gerúndio?
+\end{frame}
+
+\begin{frame}{Reflexão (II)}
+  \centering
+  \Large
+  Pense no livro de gramática da língua portuguesa (ou outra língua que quiser)
+  que você usou em sua vida escolar. Junto ao seu grupo, reflita:
+  \begin{itemize}
+    \item Em que situações do mundo real a gramática foi útil?
+    \item Como é um procedimento adequado para escrever um novo livro de
+      gramática?
+    \item<2-> Como é uma regra de formação que permite gerar um neologismo que
+      signifique ``vou procurar no Google''?
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Máquinas de Estado}
+  \centering
+  \large
+  Proponha uma máquina de estados capaz de reconhecer palavras escritas no
+  gerúndio.
+\end{frame}
+
+
+\begin{frame}{Expressões Regulares}
+  \centering
+  \large
+  Uma expressão regular é uma ferramenta para especificar padrões em textos
+  usando uma sequência de símbolos. A sintaxe desses símbolos é, a priori,
+  livre, mas é muito comum usar a especificação POSIX.
+\end{frame}
+
+\begin{frame}{Live coding}
+  \centering
+  \large
+  Vamos usar ls e grep para encontrar nomes de arquivos no meu computador. Vamos
+  encontrar, inicialmente, nomes de arquivos que contém a expressão ``tex''.
+\end{frame}
+
+
+\begin{frame}[fragile]{Expressões Regulares}
+\centering
+\large
+  \begin{tabular}{p{5cm} | p{5cm} }
+    Significado & Sintaxe POSIX \\ \hline
+    Caractere específico & O próprio caractere -- A, a, C, etc. \\ \hline
+    Qualquer caractere do grupo & Colchetes -- [ABCDE] \\ \hline
+    Qualquer letra minúscula & A-Z (use [A-Za-z] para caixa alta e baixa) \\ \hline
+    Uma sequência & Parênteses -- (LAIA) \\ \hline
+    Qualquer caractere & . (ponto final) \\ \hline
+  \end{tabular}
+
+  Exercícios 1 e 2!
+\end{frame}
+
+\begin{frame}[fragile]{Expressões Regulares}
+  \centering
+  \large
+  \begin{tabular}{p{5cm} | p{5cm} }
+    Significado & Sintaxe POSIX \\ \hline
+    0 ou mais repetições do símbolo anterior & Use * depois do símbolo
+    \\ \hline
+    1 ou mais repetições do símbolo anterior & Use + depois do símbolo \\ \hline
+    \\
+    0 ou 1 repetições do símbolo anterio & Use ? depois do símbolo \\ \hline
+  \end{tabular}
+
+  Exercícios 3, 4 e 5!
+
+\end{frame}
+
+\begin{frame}{Live coding}
+  \centering
+  \large
+  Vamos usar ls e grep para encontrar nomes de arquivos no meu computador. Junto
+  ao seu grupo, proponha expressões regulares para todos esses casos:
+  \begin{enumerate}
+    \item Arquivos com a extensão ``.tex''
+    \item Arquivos começando em ``s'' e com a extensão ``.tex''
+    \item Arquivos que tenham algum número no nome
+    \item Arquivos que tenham a expressão ``slides'' contida no nome
+    \item Arquivos chamados estritamente ``slides.tex''
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Reflexão}
+  \centering
+  \Large
+  Toda máquina de estados para reconhecimento de sequências corresponde a alguma
+  expressão regular em sintaxe POSIX? E o contrário, é verdadeiro? Qual é a
+  evidência que temos para afirmar isso?
+\end{frame}
+
+\begin{frame}{Exercício 6}
+  \centering
+  \Large
+\end{frame}
+
+
+\end{document}
