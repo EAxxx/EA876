@@ -1,0 +1,13 @@
+digraph G {
+ ranksep = 0.2
+ nodesep = 1
+ INIT [label="Inicial"]
+ S0 [label="1"]
+ S1 [label="2"]
+ INIT -> S0 [label="A"]
+ S0 -> S0 [label="A"]
+ S0-> S1 [label="B"]
+ S0 -> INIT [label="else"]
+ S1 -> INIT [label="else"]
+}
+

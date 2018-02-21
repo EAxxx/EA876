@@ -1,0 +1,305 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{Madrid}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{array}
+
+\title[03-Arquiteturas]{EA879 -- Introdução ao Software Básico\\Máquinas de
+Estado}
+\author{Tiago F. Tavares}
+\institute{FEEC -- UNICAMP}
+\date{Aula 03 -- 15/agosto/2017}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Uncomment these lines for an automatically generated outline.
+%\begin{frame}{Outline}
+%  \tableofcontents
+%\end{frame}
+
+\section{Introdução}
+
+\begin{frame}{Objetivos}
+  \Large
+  \begin{itemize}
+    \item Entender o que são máquinas de estado.
+    \item Entender como máquinas de estado podem ser usadas para reconhecer
+      cadeias de caracteres.
+    \item Aplicar máquinas de estado para reconhecer cadeias de caracteres.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Procedimentos}
+  \centering
+  \begin{tabular}{l m{6cm}}
+    \begin{minipage}{.3\textwidth}
+  \includegraphics[scale=0.45]{dot/fluxo1.pdf}
+    \end{minipage}
+  &
+  O que está representado na figura ao lado? Como representamos:
+    \begin{itemize}
+  \item ações
+  \item regras de transição
+  \item etapas do processo
+    \end{itemize}
+  \\
+  \end{tabular}
+\end{frame}
+
+\begin{frame}{Procedimentos}
+  \centering
+  \Large
+  \begin{tabular}{l m{6cm}}
+    \begin{minipage}{.3\textwidth}
+  \includegraphics[scale=0.45]{dot/fluxo1.pdf}
+    \end{minipage}
+  &
+    A espera de 5min após adicionar o chá é equivalente à espera de 5min após
+    ligar o fogo? Em outras palavras, seria possível que eles fossem
+    representados como uma única etapa?
+    \\
+  \end{tabular}
+\end{frame}
+
+\begin{frame}{Máquinas de Estado}
+  \centering
+  \large
+  \begin{tabular}{l m{6cm}}
+    \begin{minipage}{.3\textwidth}
+  \includegraphics[scale=0.45]{dot/fluxo1.pdf}
+    \end{minipage}
+  &
+    Uma máquina de estados é um conjunto de \textit{estados discretos} que
+    descrevem como um sistema deve se comportar ao longo do tempo. No caso ao
+    lado:
+    \begin{enumerate}
+      \item O que cada estado representa?
+      \item O que a máquina de estados representa?
+      \item De que tipo de entrada as regras de transição dependem?
+      \item Que sistema executa a máquina de estados?
+    \end{enumerate}
+    \\
+  \end{tabular}
+\end{frame}
+
+\begin{frame}[fragile]{Detectores de sequência}
+  \centering
+  \large
+  \begin{tabular}{l m{8cm}}
+    \begin{minipage}{.3\textwidth}
+   \includegraphics[scale=0.6]{dot/fluxo2.pdf}
+    \end{minipage}
+  &
+    \begin{verbatim}
+    #define TAM_MAX 50
+    char entradas[TAM_MAX];
+    char c;
+    int estado = 0;
+    int i = 0;
+    for (i=0; i<TAM_ENTRADA; i++) {
+      c = entradas[i]
+      switch(estado) {
+        case 0:
+          estado = state0_run(c);
+          break;
+        ...
+      }
+    }
+
+    \end{verbatim}
+    \\
+  \end{tabular}
+\end{frame}
+
+
+\begin{frame}[fragile]{Detectores de sequência}
+  \centering
+  \large
+  \begin{tabular}{l m{8cm}}
+    \begin{minipage}{.3\textwidth}
+   \includegraphics[scale=0.6]{dot/fluxo2.pdf}
+    \end{minipage}
+  &
+    \begin{verbatim}
+    int state0_run(char entrada) {
+      switch (entrada) {
+        case 'A':
+         return 1;
+         break;
+        case 'B':
+         return 0;
+         break;
+        default:
+         return 0;
+      }
+    }
+    \end{verbatim}
+    \\
+  \end{tabular}
+\end{frame}
+
+\begin{frame}[fragile]{Detectores de sequência}
+  \centering
+  \large
+  \begin{tabular}{l m{8cm}}
+    \begin{minipage}{.3\textwidth}
+   \includegraphics[scale=0.6]{dot/fluxo2.pdf}
+    \end{minipage}
+  &
+    \begin{verbatim}
+    int state0_run(char entrada) {
+      switch (entrada) {
+        case 'A':
+         return 1;
+         break;
+        case 'B':
+         return 0;
+         break;
+        default:
+         return 0;
+      }
+    }
+    \end{verbatim}
+    \\
+  \end{tabular}
+\end{frame}
+
+\begin{frame}[fragile]{Detectores de sequência}
+  \centering
+  \large
+  \begin{tabular}{l m{8cm}}
+    \begin{minipage}{.3\textwidth}
+   \includegraphics[scale=0.6]{dot/fluxo2.pdf}
+    \end{minipage}
+  &
+    O que devem ser as variáveis X, Y e Z no código abaixo:
+    \begin{verbatim}
+    int state1_run(char entrada) {
+      switch (entrada) {
+        case 'A':
+         return X;
+         break;
+        case 'B':
+         return Y;
+         break;
+        default:
+         return Z;
+      }
+    }
+    \end{verbatim}
+    \\
+  \end{tabular}
+\end{frame}
+
+
+\begin{frame}[fragile]{Detectores de sequência}
+  \centering
+  \large
+  \begin{tabular}{l m{8cm}}
+    \begin{minipage}{.3\textwidth}
+   \includegraphics[scale=0.6]{dot/fluxo2.pdf}
+    \end{minipage}
+  &
+    O que devem ser as variáveis X, Y e Z no código abaixo:
+    \begin{verbatim}
+    int state2_run(char entrada) {
+      switch (entrada) {
+        case 'A':
+         return X;
+         break;
+        case 'B':
+         return Y;
+         break;
+        default:
+         return Z;
+      }
+    }
+    \end{verbatim}
+    \\
+  \end{tabular}
+\end{frame}
+
+\begin{frame}[fragile]{Detectores de sequência}
+  \centering
+  \large
+  \begin{tabular}{l m{8cm}}
+    \begin{minipage}{.3\textwidth}
+      \includegraphics[scale=0.6]{dot/fluxo2.pdf}
+    \end{minipage}
+  &
+    Como é possível implementar uma função que retorna 1 caso a sequência lida
+    seja AB e 0 caso contrário?
+    \begin{verbatim}
+    int aceitar(int estado) {
+
+
+    }
+
+    \end{verbatim}
+    \\
+  \end{tabular}
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Detectores de sequência}
+  \centering
+  \large
+  \begin{tabular}{l m{8cm}}
+    \begin{minipage}{.3\textwidth}
+   \includegraphics[scale=0.6]{dot/fluxo2.pdf}
+    \end{minipage}
+  &
+    Nesta máquina de estados:
+    \begin{enumerate}
+    \item Onde as regras de transição estão mostradas?
+    \item Como é possível saber se uma sequência de entradas foi válida?
+    \end{enumerate}
+    \\
+  \end{tabular}
+\end{frame}
+
+\begin{frame}[fragile]{Exercício 1}
+  \centering
+  \large
+
+\end{frame}
+\begin{frame}[fragile]{Exercício 2}
+  \centering
+  \large
+
+\end{frame}
+
+\begin{frame}[fragile]{Exercício 3}
+  \centering
+  \large
+
+\end{frame}
+
+\begin{frame}[fragile]{Exercício 4}
+  \centering
+  \large
+
+\end{frame}
+
+
+\end{document}
