@@ -1,0 +1,114 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{Madrid}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{array}
+
+\title[07-Yacc]{Yacc}
+\author{Tiago F. Tavares}
+\institute{FEEC -- UNICAMP}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Uncomment these lines for an automatically generated outline.
+%\begin{frame}{Outline}
+%  \tableofcontents
+%\end{frame}
+
+\section{Introdução}
+
+\begin{frame}{Objetivos}
+  \Large
+  \begin{itemize}
+    \item Entender o que é e como usar o Yacc.
+    \item Entender a sintaxe do Yacc.
+    \item Entender como compilar programas usando Yacc.
+    \item Construir uma pequena aplicação usando Yacc.
+    \item Entender o que é análise sintática.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Live Coding}
+  Yacc é uma ferramenta que permite programar regras de formação baseadas nos
+  tokens gerados pelo Lex, e associar comportamentos específicos à aplicação de
+  regras de formação específicas.
+  \begin{verbatim}
+  %{
+      /* Codigo C
+  %token (lista de tokens definidos no Lex)
+  %}
+     <----  definicoes
+  %%
+                 <--- Regras de formação
+  %%
+  /* Codigo C */
+  \end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Usando yylval}
+  \large
+  \textsc{yylval} é um union que pode ser re-definido pelo programador e que contém o
+  valor relacionado ao token que Lex retorna ao Yacc:
+
+  \begin{verbatim}
+  [0-9]+  {
+         yylval = atoi(yytext); /* Valor do token */
+         return INT; /* Tipo do token */
+          }
+  \end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Aplicando regras no sentido reverso}
+  \large
+  O que fazer quando encontrei uma regra de formação válida?
+  \begin{verbatim}
+  E:
+     INT '+' INT { $$ = $1 + $3 }
+
+  $$ é o valor que "sobe" a árvore sintática.
+  $1, $2, $3 são os valores (yylval) dos tokens
+  \end{verbatim}
+
+\end{frame}
+
+\begin{frame}[fragile]{Live Coding}
+  \large
+  Regras de formação definidas ANTES têm precedência sobre as regras definidas
+  DEPOIS:
+  \begin{verbatim}
+    E:
+       INT
+       | '(' E ')'
+       | E '+' E
+  \end{verbatim}
+  Em qual ordem as regras seriam aplicadas na expressão: \\ \textsc{2 + (5 + 1)}?
+\end{frame}
+
+\begin{frame}{Exercício}
+\large
+  Exercício 2
+\end{frame}
+
+
+
+\end{document}

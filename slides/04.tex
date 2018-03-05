@@ -108,27 +108,49 @@
 
 \end{frame}
 
-\begin{frame}{Exercício}
+
+\begin{frame}[fragile]{Ambiguidades}
   \centering
   \large
-  Proponha uma modificação ao programa feito ao vivo que permita somar todos os
-  literais tipo int encontrados na string de entrada.
+  \begin{enumerate}
+    \item Expressão que dá match com mais caracteres ganha
+    \item Expressão que foi colocada mais acima ganha
+  \end{enumerate}
+
+  \begin{verbatim}
+  [0-9]+ { printf("Expr1\n"); }
+  [0-9A-Za-z]+ { printf("Expr2\n"); }
+  \end{verbatim}
+
+  Que entrada faria o programa escrever Expr1? E Expr2?
 \end{frame}
+
+\begin{frame}[fragile]{Acessando o texto que ``deu match''}
+  \centering
+  \large
+  \textsc{char *yytext}
+
+  \begin{verbatim}
+  [0-9]+ { printf("%d\n", atoi(yytext)+1); }
+  [a-zA-Z]+ { printf("%s\n", yytext); }
+  \end{verbatim}
+\end{frame}
+
 
 \begin{frame}{Análise léxica de C}
 \large
 Mostre as expressões regulares capazes de reconhecer:
   \begin{enumerate}
     \item Caractere ponto-e-vírgula
-    \item Palavras reservadas e operadores (int, float, +,  etc.)
+    \item Palavras reservadas ``if'' e ``while''
     \item Números inteiros
     \item Números float
     \item Identificadores (começa com um caractere ascii seguido de qualquer
       número de caracteres alfanuméricos)
-    \item Expressões matemáticas válidas
+    \item Expressões com parênteses corretamente balanceados.
   \end{enumerate}
-
 \end{frame}
+
 
 
 

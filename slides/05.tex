@@ -1,0 +1,218 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{Madrid}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{array}
+
+\title[06-Gramática Livre de Contexto]{Gramática Livre de Contexto}
+\author{Tiago F. Tavares}
+\institute{FEEC -- UNICAMP}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Uncomment these lines for an automatically generated outline.
+%\begin{frame}{Outline}
+%  \tableofcontents
+%\end{frame}
+
+\section{Introdução}
+
+\begin{frame}{Revisão...}
+  \Large
+  \begin{enumerate}
+  \item Máquinas de estado podem reconhecer categorias específicas de cadeias de
+    caracteres,
+  \item Expressões regulares são formas válidas de expressar máquinas de estados
+    que reconhecem caracteres.
+  \item Posso usar expressões regulares para reconhecer tokens em linguagens de
+    programação.
+  \end{enumerate}
+\end{frame}
+
+
+\begin{frame}{Objetivos}
+  \Large
+  \begin{itemize}
+    \item Entender quais problemas não podem ser resolvidos por gramáticas
+       regulares.
+    \item Entender gramáticas livres de contexto como regras de formação.
+    \item Entender como resolver expressões matemáticas com GLCs.
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Revisão: Lex}
+  \Large
+  Exercício 1!
+\end{frame}
+
+
+\begin{frame}{Expressões Matemáticas}
+\large
+  Como é possível saber que $56 + 93$ resulta em um inteiro? Ordene as etapas do
+  raciocínio!
+  \begin{enumerate}
+    \item podemos trocar $56 + 93$ pelo valor $149$
+    \item O sinal $+$ denota uma operação matemática.
+    \item Na soma, podemos trocar os valores dos operandos e o sinal $+$ pelo
+      valor do resultado da adição.
+    \item $56$ e $93$ podem ser identificados como números inteiros.
+    \item Definimos arbitrariamente a operação $+$ como a adição matemática
+      clássica.
+    \item $149$ pode ser identificado como inteiro
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Gerando e resolvendo somas}
+\large
+\centering
+  \includegraphics[width=0.8\textwidth]{dot/grafo_soma.pdf}
+
+  Trata-se de uma \textit{regra de formação}.
+\end{frame}
+
+
+\begin{frame}{Gerando e resolvendo somas}
+\large
+\centering
+  \includegraphics[width=0.8\textwidth]{dot/grafo_soma2.pdf}
+
+Para gerar expressões, aplicamos regras no sentido direto. Para resolvê-las,
+  aplicamos as regras de formação no sentido reverso.
+\end{frame}
+
+\begin{frame}{Gramáticas Livres de Contexto}
+\large
+\centering
+  \begin{itemize}
+  \item Regras de formação de strings definem uma gramática!
+  \item Não é uma Gramática Regular (não pode ser expressa por expressões
+    regulares)
+  \item São chamadas ``Livres de Contexto'' porque...
+  \item <2-> ... a aplicação das regras em um nível da árvore não depende das
+    regras que foram aplicadas nos outros níveis da árvore, apenas dos
+      resultados.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Notação}
+\Large
+  Usar símbolo, seta e então símbolo ``gerado'':
+  \begin{enumerate}
+  \item $S \rightarrow \phi$
+  \item $S \rightarrow S S$
+  \item $S \rightarrow A$
+  \item $S \rightarrow B$
+  \end{enumerate}
+  Cada ``regra'' é chamada de ``produção''.
+\end{frame}
+
+\begin{frame}{Notação}
+\Large
+  Símbolos terminais: símbolos do alfabeto que aparecem na definição da GLC.
+  \begin{enumerate}
+  \item $S \rightarrow \phi$
+  \item $S \rightarrow S S$
+  \item $S \rightarrow A$
+  \item $S \rightarrow B$
+  \end{enumerate}
+  Neste caso, $\phi$, A e B são símbolos terminais.
+\end{frame}
+
+\begin{frame}{Notação}
+\Large
+  Símbolos não-terminais: símbolos da GLC que aparecem para denotar padrões.
+  \begin{enumerate}
+  \item $S \rightarrow \phi$
+  \item $S \rightarrow S S$
+  \item $S \rightarrow A$
+  \item $S \rightarrow B$
+  \end{enumerate}
+  Neste caso, S é um símbolo não-terminal.
+\end{frame}
+
+\begin{frame}{Notação}
+\Large
+  Símbolos inicial: um símbolo não-terminal especial, que denota o símbolo
+  ``semente'' (inicial) em uma GLC.
+  \begin{enumerate}
+  \item $S \rightarrow \phi$
+  \item $S \rightarrow S S$
+  \item $S \rightarrow A$
+  \item $S \rightarrow B$
+  \end{enumerate}
+  Neste caso, S é um símbolo inicial.
+\end{frame}
+
+\begin{frame}{Notação. Exercício!}
+\Large
+  Identifique os símbolos terminais, não-terminais e o símbolo inicial:
+  \begin{enumerate}
+  \item $S \rightarrow \phi$
+  \item $S \rightarrow S S$
+  \item $S \rightarrow A$
+  \item $X \rightarrow X S$
+  \item $X \rightarrow B$
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Exercício}
+\Large
+\centering
+  Exercício 2
+\end{frame}
+
+\begin{frame}{Exercício}
+\Large
+\centering
+  Exercício 3
+
+\end{frame}
+
+\begin{frame}{Autômatos}
+\Large
+\centering
+A expressão regular \textsc{1*} é equivalente à GLC dada por:
+  \begin{itemize}
+    \item $S \rightarrow \phi$
+    \item $S \rightarrow 1 S$
+  \end{itemize}
+
+Por que é impossível fazer uma expressão regular equivalente à GLC dada por:
+  \begin{itemize}
+    \item $S \rightarrow \phi$
+    \item $S \rightarrow 1 S 0$
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Autômato com Pilha}
+\Large
+\centering
+Exercício 4
+\end{frame}
+
+
+
+
+\end{document}
