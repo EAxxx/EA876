@@ -76,20 +76,6 @@
   dicionário, é possível saber que é um verbo no gerúndio?
 \end{frame}
 
-\begin{frame}{Reflexão (II)}
-  \centering
-  \Large
-  Pense no livro de gramática da língua portuguesa (ou outra língua que quiser)
-  que você usou em sua vida escolar. Junto ao seu grupo, reflita:
-  \begin{itemize}
-    \item Em que situações do mundo real a gramática foi útil?
-    \item Como é um procedimento adequado para escrever um novo livro de
-      gramática?
-    \item<2-> Como é uma regra de formação que permite gerar um neologismo que
-      signifique ``vou procurar no Google''?
-  \end{itemize}
-\end{frame}
-
 \begin{frame}{Máquinas de Estado}
   \centering
   \large
@@ -155,16 +141,21 @@
     \item Arquivos começando em ``s'' e com a extensão ``.tex''
     \item Arquivos que tenham algum número no nome
     \item Arquivos que tenham a expressão ``slides'' contida no nome
-    \item Arquivos chamados estritamente ``slides.tex''
+    \item Arquivos chamados estritamente ``[inteiro].tex''
   \end{enumerate}
 \end{frame}
 
-\begin{frame}{Reflexão}
-  \centering
-  \Large
-  Toda máquina de estados para reconhecimento de sequências corresponde a alguma
-  expressão regular em sintaxe POSIX? E o contrário, é verdadeiro? Qual é a
-  evidência que temos para afirmar isso?
+\begin{frame}
+  \large
+  \begin{tabular}{p{5cm} | p{5cm} }
+    Significado & Sintaxe POSIX \\ \hline
+    Âncora no começo da linha & $\hat{ }${regex} \\ \hline
+    Âncora no final da linha & {regex}\$ \\ \hline
+    \\
+    Negação & [$\hat{ }$A-Z] (rejeita [A-Z]) \\ \hline
+  \end{tabular}
+  Estudo de caso: como encontrar nomes dos personagens no texto de Romeu e
+  Julieta?
 \end{frame}
 
 \begin{frame}{Exercício 6}
