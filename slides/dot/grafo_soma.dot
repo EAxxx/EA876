@@ -1,0 +1,11 @@
+digraph G {
+"INT (A+B)" -> "INT (A)"
+"INT (A+B)" -> "OP (+)"
+"INT (A+B)" -> "INT (B)"
+
+"INT (A)" -> "'A'"
+"OP (+)" -> "'+'"
+"INT (B)" -> "'B'"
+
+}
+
