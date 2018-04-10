@@ -1,27 +1,24 @@
-102922
-120246
-135216
-135819  gshima
-138014  viajanting
-138313  fabriciomaruta
-139589  leticianog
-146111  pimyride94
-146649  JoTaDeusz
-147279  mtiemi
-148127
-157305
-158164  lucasdechiara
-158508  vitosal
-159834
-160136  brunorondina
-160174
-164491  guto2569
-166241
-169127  guilhermerc
-173691  gui88Abreu
-178610  lrm5060
-183374  steckmarco
-185306  pspalmirasara
-186807  rodrigocaus
-187888  VictorFSantolim
-188684  williamquintas
+135819	gshima
+138014	viajanting
+138313	fabriciomaruta
+139589	leticianog
+146111	pimyride94
+146649	JoTaDeusz
+147279	mtiemi
+148127	
+157305	coimbra574
+158164	lucasdechiara
+158508	vitosal
+159834	
+160136	brunorondina
+160174	
+164491	guto2568
+166241	AAYOSH
+169127	guilhermerc
+173691	gui88Abreu
+178610	lrm5060
+183374	steckmarco
+185306	pspalmirasara
+186807	rodrigocaus
+187888	VictorFSantolim
+188684	williamquintas

@@ -1,0 +1,4 @@
+
+1) ps -A (ver o PID do programa de alocacao)
+2) cat /proc/PID/maps (ver mapeamento de memoria)
+
