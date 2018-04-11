@@ -21,7 +21,7 @@ EXPRESSAO:
     INT { $$ = $1;
           }
 
-    | EXPRESSAO SOMA EXPRESSAO {
+    | EXPRESSAO SOMA EXPRESSAO  {
         printf("Encontrei soma: %d + %d = %d\n", $1, $3, $1+$3);
         $$ = $1 + $3;
         }
