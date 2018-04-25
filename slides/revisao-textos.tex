@@ -1,0 +1,268 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{Madrid}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+}
+\usepackage[normalem]{ulem}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{array}
+
+\title[T1-Trabalho 1]{Introdução ao Software Básico\\Revisão de textos}
+\author{Tiago F. Tavares}
+\institute{FEEC -- UNICAMP}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Uncomment these lines for an automatically generated outline.
+%\begin{frame}{Outline}
+%  \tableofcontents
+%\end{frame}
+
+\section{Introdução}
+
+\begin{frame}{Objetivos}
+  \Large
+  \begin{itemize}
+    \item Analisar textos científicos
+    \item Identificar falhas em raciocínios científicos
+  \end{itemize}
+
+Hoje, excepcionalmente, tente se sentar em grupos de pessoas que você não conhece,
+  evitando sentar-se com membros do seu grupo de trabalho. Se precisar, tome um
+  tempo para se apresentar.
+\end{frame}
+
+\begin{frame}[fragile]{Formato}
+  \centering
+  \Large
+  Nesta aula, você deve ter, em mãos, uma cópia de seu relatório. Verifique,
+  inicialmente, se o formato está correto.
+  \begin{enumerate}
+    \item Seu relatório tem título?
+    \item Todos os autores estão identificados?
+    \item O relatório está dentro do limite de páginas (1)?
+  \end{enumerate}
+  O relatório que você tem em mãos hoje não será lido pelo professor (a não ser
+  que você peça), então fique à vontade para escrever o que quiser.
+\end{frame}
+
+\begin{frame}[fragile]{Reflexão (parte 1)}
+  \centering
+  \Large
+  No verso do seu relatório:
+  \begin{enumerate}
+    \item Na lateral esquerda, faça uma lista com o nome de todos os membros do
+      grupo
+    \item Na lateral direita, faça uma lista de todos os objetivos intermediários
+    que foram cumpridos para completar o projeto (por exemplo: ``projetar
+    gramática livre de contexo'', ``implementar código no
+    yacc'', ``redigir relatório'' e assim por diante).
+
+  \end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Reflexão (parte 2)}
+  \centering
+  \Large
+  No verso do seu relatório, relacione pessoas aos objetivos que foram
+  cumpridos, usando setas diferentes (cores, tracejado, etc.) para cada
+  categoria de participação:
+  \begin{enumerate}
+    \item Fez sozinho(a)
+    \item Participou ativamente
+    \item Acompanhou a discussão
+  \end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Reflexão (parte 3)}
+  \centering
+  \Large
+  Discuta com seu grupo (de aula):
+  \begin{enumerate}
+    \item As tarefas do seu grupo ficaram bem distribuídas?
+    \item Quais fatores (externos e internos ao grupo de trabalho) contribuíram
+        para isso?
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Leitura de texto}
+  \centering
+  \large
+  Passe seu texto para a pessoa que está à sua esquerda. Após esse processo,
+  cada membro do grupo deve ter em mãos um relatório do qual não é autor. Leia o
+  texto, identificando se existe:
+  \begin{enumerate}
+  \item Um breve texto introdutório que discute do que o texto se trata?
+  \item Uma demonstração das funcionalidades implementadas
+  \item Análise, comparando a idéia de usar comandos específicos da linguagem
+    criada pelo grupo com uma  aplicação equivalente, usando alguma biblioteca
+      de linguagem de propósito geral.
+  \end{enumerate}
+
+  Circule no texto as partes identificadas e as rotule como ``contexto'',
+  ``demonstração'' e ``análise''. Há partes do texto sem função clara?
+\end{frame}
+
+\begin{frame}[fragile]{Gramática}
+  \centering
+  \large
+  No texto todo, sublinhe os seguintes aspectos:
+  \begin{enumerate}
+    \item Erros de escrita/gramática (todos que puder achar).
+    \item Vícios de linguagem:
+      \begin{enumerate}
+        \item Sujeito indeterminado ou reflexivo (``faz-se'', ``propõe-se'')
+        \item Tempo verbal futuro, pretérito mais-que-perfeito, mesóclise
+        \item Voz passiva com conjugação errada (``foi feit\textbf{o} \textbf{a
+          compilação}'')
+      \end{enumerate}
+  \end{enumerate}
+\end{frame}
+
+
+\begin{frame}[fragile]{Fluxo de idéias}
+  \centering
+  \large
+  Agora, releia o texto com foco no fluxo de idéias.
+  \begin{enumerate}
+    \item Para cada frase:
+      \begin{enumerate}
+        \item Identifique os conceitos que aparecem na frase.
+        \item Para cada conceito, se ele aparece pela primeira vez no texto,
+          verifique se ele aparece de:
+          \begin{enumerate}
+            \item Senso comum (ex: $F = MA$)
+            \item Uma citação ([4])
+            \item Um raciocínio (... portanto, corpos no vácuo caem com a mesma
+              aceleração)
+            \item Uma observação direta (o pêndulo tem massa 1kg)
+          \end{enumerate}
+        \item Se não aparece, circule o conceito, mostrando que a origem dele
+          precisa ser melhor explicada.
+       \end{enumerate}
+   \end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Relevância 1}
+  \centering
+  \large
+  Releia novamente o texto. Passe um traço sobre todas as passagens que são
+  irrelevantes (não-essenciais) para a construção da idéia central do documento,
+  mesmo que sejam corretas e adequadamente embasadas. Também passe um traço
+  sobre hipérboles. Exemplos:
+  \begin{itemize}
+    \item Portanto, a potência é de 30 Watts, \sout{unidade batizada em homenagem ao engenheiro
+      James Watt [1], inventor do regulador de velocidade de máquinas a vapor [2]}
+    \item \sout{O algoritmo foi implementado em MatLab 2014.}
+    \item \sout{A construção de uma linguagem de programação é parte fundamental da
+      formação de um engenheiro.}
+    \item \sout{O experimento teve sucesso.}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Conjunções}
+  \centering
+  \large
+  No texto todo, encontre as conjunções -- palavras como ``mas'', ``e'',
+  ``portanto'', etc. que dão sentido às conexões de frases. Identifique (e
+  sublinhe) todos os conectivos que não estão adequados às idéias mostradas. Por
+  exemplo:
+  \begin{enumerate}
+    \item Compiladores são relevantes, portanto fizemos um trabalho de
+      compiladores (a relação de implicação não deveria existir).
+    \item Imagens são interessantes, assim, faz-se necessário uma linguagem
+      específica para processamento (não existe relação de implicação, além do
+      sujeiro reflexivo e da conjugação errada da voz passiva).
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Idéia geral}
+  \centering
+  \large
+  Para cada parte do texto (motivação, demonstração, discussão), verifique se
+  ela cumpre sua função. Desconsidere, para isso, a gramática e a escrita, a não
+  ser que elas atrapalhem muito a compreensão do texto. Atribua um conceito a
+  cada parte:
+
+  \begin{itemize}
+    \item A -- cumpre a função e está bem embasada
+    \item B -- alguns aspectos não estão bem embasados ou está parcialmente
+      incompleto, mas isso não atrapalha o texto como um todo
+    \item C -- está ok (``dá para entender''), mas tem muitas idéias mal
+      embasadas ou mal conectadas, e isso atrapalha o texto como um todo
+    \item D -- não cumpre bem a função
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]{Idéias interessantes}
+  \centering
+  \large
+  No texto, marque (use um emoji) as conclusões que estão bem embasadas, e que
+  são relevantes para a disciplina (ex: ``portanto, essa solução poderia ser
+  usada para otimizar processos de produção de código'' -- se for uma frase
+  corretamente embasada)
+\end{frame}
+
+\begin{frame}[fragile]{Nota -- predição}
+  \centering
+  \large
+  Atribua notas ao texto. Todo texto começa com 10.
+  \begin{itemize}
+    \item Nas avaliações de seção: $-1$ para cada nota B, $-2$ para cada C, $-3$ para
+  cada nota D.
+    \item $-0.5$ para cada conjunção mal empregada (que foi sublinhada)
+    \item $-0.1$ para cada erro de gramática ou de escrita (que foi sublinhado)
+    \item $-1$ para cada conceito que aparece sem justificativa (que foi circulado)
+    \item $+2$ para cada idéia interessante (que foi marcada com emoji)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Devolução}
+  \centering
+  \large
+  Devolva o relatório, com marcações, ao seu portador original. Após receber seu
+  relatório de volta, reuna-se com o seu grupo de trabalho e discuta brevemente
+  sobre o que foi observado, e se vocês concordam com as observações dos
+  revisores.
+\end{frame}
+
+\begin{frame}[fragile]{Discussão}
+  \centering
+  \large
+  Discuta com seu grupo:
+  \begin{enumerate}
+    \item Como você se sentiu ao revisar o relatório de outro grupo?
+    \item Quais foram as maiores dificuldades encontradas no processo?
+    \item Você acha que sua contribuição foi relevante para o relatório do outro
+      grupo?
+    \item Você acha que a contribuição dos revisores foi relevante para você?
+    \item Você aprendeu ou descobriu algo relevante ao ler o relatório de outro
+      grupo?
+    \item Em que outras situações um processo de revisão como esse poderia ser
+      relevante?
+  \end{enumerate}
+\end{frame}
+
+\end{document}
