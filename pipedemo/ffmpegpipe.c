@@ -1,13 +1,6 @@
 #include <stdio.h>
 #include <stdint.h>
 
-int16_t hwr(int16_t sample) {
-  if (sample < 0)
-    return 0;
-  else
-    return sample;
-}
-
 void main()
 {
 // Launch two instances of FFmpeg, one to read the original WAV
@@ -25,7 +18,7 @@ while(1)
 {
     count = fread(&sample, 2, 1, pipein); // read one 2-byte sample
     if (count != 1) break;
-    sample = hwr(sample);
+    sample *= 8;
     fwrite(&sample, 2, 1, pipeout);
 }
 

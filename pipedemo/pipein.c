@@ -1,15 +1,20 @@
 #include <stdio.h>
 
 int main() {
+  FILE *fp;
   char c;
 
-  int contador = 0;
+  unsigned int contador = 0;
+
+  fp = popen("cat ../textos/romeo.txt", "r");
+
 
   while (c != EOF) {
-    c = getchar();
+    c = fgetc(fp);
     if (c=='c')
       contador++;
   }
+  pclose(fp);
 
   printf("Encontrei %d letras c\n", contador);
   return 0;
