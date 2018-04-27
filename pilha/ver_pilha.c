@@ -3,7 +3,7 @@
 
 
 void func(int N) {
-  int a;
+  double a;
   printf("Stack em %p (%lu)\n", &a, (unsigned long int)&a);
   if (N<10) func(N+1);
 }

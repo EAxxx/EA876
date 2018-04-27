@@ -1,6 +1,4 @@
-
 #include <stdio.h>
-
 
 void funcao_maliciosa() {
   char c, *d;
