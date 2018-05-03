@@ -23,11 +23,7 @@ ATRIBUICAO:
         memoria[$1] = $3;
         $$ = $3;
       }
-    | VAR IGUAL VAR {
-        memoria[$1] = memoria[$3];
-        $$ = memoria[$3];
-      }
-    ;
+     ;
 
 EXPRESSAO:
     INT { $$ = $1;
