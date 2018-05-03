@@ -12,7 +12,7 @@ void *worker(void *w) {
   printf("Thread worker tentando pegar trava...\n");
   pthread_mutex_lock(&trava);
   printf("Thread worker pegou trava!\n");
-  sleep(1);
+  sleep(5);
   printf("Thread worker vai liberar trava!\n");
   pthread_mutex_unlock(&trava);
   printf("Thread worker liberou trava!\n");
@@ -27,6 +27,13 @@ int main(int argc, char **argv) {
   pthread_mutex_lock(&trava);
   pthread_create(&thread, NULL, worker, NULL);
   sleep(2);
+  pthread_mutex_unlock(&trava);
+  sleep(1);
+  printf("Thread principal tentando pegar trava...\n");
+  pthread_mutex_lock(&trava);
+  printf("Thread principal pegou trava\n");
+  sleep(1);
+  printf("Thread principal liberando trava\n");
   pthread_mutex_unlock(&trava);
 
   pthread_join(thread, NULL);
