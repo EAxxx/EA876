@@ -13,7 +13,7 @@ pthread_mutex_t trava;
 
 /* Definicao do problema */
 int completos[NUMEROS] = {0, 0, 0, 0, 0, 0, 0};
-int numeros[NUMEROS] = {20, 30, 40, 20, 30, 45, 2};
+int numeros[NUMEROS] = {45, 2, 2, 20, 30, 45, 2};
 int resultados[NUMEROS];
 
 int fibo(int N) {
