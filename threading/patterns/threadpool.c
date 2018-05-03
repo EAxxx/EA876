@@ -36,7 +36,10 @@ void* worker(void *arg) {
       instancia++;
     }
     printf("Thread %d tentando tomar intancia %d\n", M, instancia);
-    if (instancia >= NUMEROS) break; /* Acabaram as instancias? */
+    if (instancia >= NUMEROS) { /* Acabaram as instancias */
+      pthread_mutex_unlock(&trava);
+      break;
+    }
     completos[instancia] = 1; /* Proponho-me a resolver a instancia */
     pthread_mutex_unlock(&trava);
 
