@@ -33,7 +33,12 @@ int main() {
   msg = accept(socket_fd, (struct sockaddr*)&client, &client_size);
   printf("Recebi uma mensagem:\n");
   read(msg, input_buffer, 5);
-  printf("%s", input_buffer);
+  printf("%s\n", input_buffer);
+
+  /* Identificando cliente */
+  char ip_client[INET_ADDRSTRLEN];
+  inet_ntop( AF_INET, &(client.sin_addr), ip_client, INET_ADDRSTRLEN );
+  printf("IP que enviou: %s\n", ip_client);
 
   close(socket_fd);
   return 0;
