@@ -12,9 +12,10 @@
 pthread_mutex_t trava;
 
 /* Definicao do problema */
-int completos[NUMEROS] = {0, 0, 0, 0, 0, 0, 0};
-int numeros[NUMEROS] = {45, 2, 2, 20, 30, 45, 2};
-int resultados[NUMEROS];
+
+int completos[NUMEROS] = {0, 0, 0, 0, 0, 0, 0}; /* Instancias ja solucionadas*/
+int numeros[NUMEROS] = {45, 2, 2, 20, 30, 45, 2}; /* Argumentos por instancia */
+int resultados[NUMEROS]; /* Resultados por instancia */
 
 int fibo(int N) {
   if (N<=2) return 1;
@@ -26,28 +27,29 @@ void* worker(void *arg) {
   int *N = (int*)(arg);
   int M = (*N);
   printf("Iniciando thread %d\n", M);
-  int instancia=0;
+  int instancia=0; /* A instancia do problema com a qual vou trabalhar */
   while (1) {
-
-    pthread_mutex_lock(&trava);
     /* Busca por uma instancia do problema que ainda nao foi resolvida */
+    pthread_mutex_lock(&trava);
+
     while ( (completos[instancia]!=0) && (instancia < NUMEROS)) {
       printf("Thread %d testou instancia %d\n", M, instancia);
       instancia++;
     }
     printf("Thread %d tentando tomar intancia %d\n", M, instancia);
-    if (instancia >= NUMEROS) { /* Acabaram as instancias */
+    if (instancia >= NUMEROS) { /* Acabaram as instancias (problema inteiro
+                                    foi finalizado) */
+      /* Antes de sair do loop, libero a trava! */
       pthread_mutex_unlock(&trava);
       break;
     }
-    completos[instancia] = 1; /* Proponho-me a resolver a instancia */
+    completos[instancia] = 1; /* Proponho-me a resolver a
+                                 instancia que encontrei */
     pthread_mutex_unlock(&trava);
 
     printf("Instancia %d acessada por thread %d\n", instancia, M);
     resultados[instancia] = fibo(numeros[instancia]);
     printf("Fibo(%d) = %d\n", numeros[instancia], resultados[instancia]);
-
-
   }
   printf("Saindo de thread %d\n", M);
   return NULL;
