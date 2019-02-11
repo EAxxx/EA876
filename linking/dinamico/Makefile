@@ -1,4 +1,7 @@
-LIB=mylib.c
+LIB?=mylib.c
+# O comando:
+# make LIB=outracoisa.c
+# redefine LIB naquela execucao sem ter que modificar o Makefile
 LIBO:=$(LIB:.c=.o)
 
 
@@ -10,7 +13,7 @@ main:main.o libmylib.so
 main.o: main.c
 	gcc -c main.c
 
-libmylib.so:mylib.o
+libmylib.so:$(LIBO)
 	gcc -shared -o libmylib.so $(LIBO)
 
 $(LIBO):$(LIB)
