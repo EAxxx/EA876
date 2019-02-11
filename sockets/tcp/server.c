@@ -27,7 +27,7 @@ int main() {
   printf("Abri porta 3001!\n");
 
   listen(socket_fd, 2);
-  printf("Estou ouvindo na porta 3001!\n");
+  printf("Estou ouvindo na porta 3001 e esperando conexoes!\n");
 
   while (1) {
     printf("Vou travar ate receber alguma coisa\n");
@@ -42,6 +42,7 @@ int main() {
     printf("IP que enviou: %s\n", ip_client);
 
     /* Respondendo */
+    sleep(1);
     printf("Enviando mensagem de retorno\n");
     if (send(connection_fd, "PONG", 5, 0) < 0) {
       printf("Erro ao enviar mensagem de retorno\n");
