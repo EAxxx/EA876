@@ -42,7 +42,11 @@ int main() {
 
   for (int i=0; i<100; i++) buffer_in[i] = '\0';
 
-  scanf("%s", buffer_in);
+  pointer = 0;
+  do {
+    c=getchar();
+    buffer_in[pointer++] = c;
+  } while (c != '\n');
 
   fsm maquina;
   maquina.estado_atual = 0;
