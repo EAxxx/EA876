@@ -23,3 +23,10 @@ Prazo | Tarefa
  10/05    | [Contador Multiprocesso](https://github.com/EAxxx/multiprocess_counter)
  24/05    | [Contador Multithread](https://github.com/EAxxx/multithread_counter)
  07/06    | [Ordenação Multithread](https://github.com/EAxxx/multithread_sort)
+
+## Trabalhos em grupo
+ * Os enunciados e prazos referentes aos trabalhos 1 e 2 estão nas pastas
+   correspondentes neste repositório.
+ * As datas importantes referentes aos trabalhos estão previstas no calendário
+   da disciplina (verifique no Google Classroom).
+
