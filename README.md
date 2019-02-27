@@ -17,9 +17,9 @@ E-mail: tavares [at] dca [dot] fee [dot] unicamp [dot] br
 
 Prazo | Tarefa
 ----- | ------
- 09/03    | [Instalar o ambiente computacional](PREPARAR.md) e laboratório: [Somador de Números](http://www.github.com/EAxxx/somador_de_numeros)
- 23/03    | [CamelCaseConverter](https://github.com/EAxxx/camelcaseconverter)
- 06/04    | [PythonListParser](https://github.com/EAxxx/python_list_parser)
- 04/05    | [Contador Multiprocesso](https://github.com/EAxxx/multiprocess_counter)
- 11/05    | [Contador Multithread](https://github.com/EAxxx/multithread_counter)
- 25/05    | [Ordenação Multithread](https://github.com/EAxxx/multithread_sort)
+ 08/03    | [Instalar o ambiente computacional](PREPARAR.md) e laboratório: [Somador de Floats](http://www.github.com/EAxxx/somador_de_floats)
+ 22/03    | [EmailSorting](https://github.com/EAxxx/emailsorting)
+ 05/04    | [JSONParser](https://github.com/EAxxx/json_parser)
+ 10/05    | [Contador Multiprocesso](https://github.com/EAxxx/multiprocess_counter)
+ 24/05    | [Contador Multithread](https://github.com/EAxxx/multithread_counter)
+ 07/06    | [Ordenação Multithread](https://github.com/EAxxx/multithread_sort)

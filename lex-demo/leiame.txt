@@ -1,0 +1,16 @@
+Como compilar códigos escritos em Lex/Flex
+
+Lex/Flex converte códigos para a linguagem C. Ao executar:
+
+> flex lexdemo.l
+
+um segundo código-fonte será gerado. Ele deve se chamar lex.yy.c. Esse, sim,
+pode ser compilado usando o GCC:
+
+> gcc -olexdemo lex.yy.c
+
+Então, a cadeia de comandos inteira que você deve inserir é:
+
+flex lexdemo.l
+gcc -olexdemo lex.yy.c
+

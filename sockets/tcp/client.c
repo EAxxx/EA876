@@ -26,7 +26,6 @@ int main() {
   /* Agora, meu socket funciona como um descritor de arquivo usual */
   send(socket_fd, "PING", 5, 0);
   printf("Escrevi mensagem de ping!\n");
-  sleep(1);
 
   /* Recebendo resposta */
   char reply[10];
