@@ -22,7 +22,7 @@ int main() {
   expoente = 1;
 
   while (tamanho < tamanho_max) {
-    if (aloca_pilha(tamanho)==0) break;
+    if (aloca_pilha(tamanho)<0) break;
     tamanho *= 10;
     expoente += 1;
   }
@@ -31,7 +31,7 @@ int main() {
   tamanho = 10;
   expoente = 1;
   while (tamanho < tamanho_max) {
-    if (aloca_heap(tamanho)==0) break;
+      if (aloca_heap(tamanho)<0) break;
     tamanho *= 10;
     expoente += 1;
   }
