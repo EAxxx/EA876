@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/mman.h>
-#include <sys/wait.h>
 #include <stdlib.h>
 
 int main() {
@@ -12,15 +11,14 @@ int main() {
   printf("Pressione ENTER para continuar!\n");
   getchar();
 
-  char *b;
-  b = (char*) malloc(mem_size);
 
-  /* Alocacao privada com malloc */
-  /*
+  /* Definir flags de protecao e visibilidade de memoria */
   int protection = PROT_READ | PROT_WRITE;
-  int visibility = MAP_PRIVATE | MAP_ANON;
+  int visibility = MAP_SHARED | MAP_ANON;
+
+  /* Criar area de memoria mapeada */
+  char *b;
   b = (char*) mmap(NULL, mem_size, protection, visibility, 0, 0);
-  */
 
   printf("Memoria esta mapeada\n");
   printf("Pressione ENTER para continuar!\n");
