@@ -24,6 +24,7 @@ Prazo | Tarefa
  24/05    | [Contador Multithread](https://github.com/EAxxx/multithread_counter)
  07/06    | [Ordenação Multithread](https://github.com/EAxxx/multithread_sort)
 
+
 ## Trabalhos em grupo
  * Os enunciados e prazos referentes aos trabalhos 1 e 2 estão nas pastas
    correspondentes neste repositório.
