@@ -26,6 +26,7 @@ void *receber_respostas(void *parametros) {
 
 int main() {
   struct sockaddr_in target;
+  char msg[20];
   pthread_t receiver;
 
   socket_fd = socket(AF_INET, SOCK_STREAM, 0);
@@ -45,9 +46,9 @@ int main() {
 
   while(1) {
   /* Agora, meu socket funciona como um descritor de arquivo usual */
-  send(socket_fd, "PING", 5, 0);
-  printf("Escrevi mensagem de ping!\n");
-  sleep(3);
+  scanf("%s", msg);
+  send(socket_fd, msg, 10, 0);
+ /* sleep(3);*/
   }
   return 0;
 }
