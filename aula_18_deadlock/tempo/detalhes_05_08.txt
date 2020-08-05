@@ -1,0 +1,4 @@
+mudar o clock() para gettimeofday(): https://stackoverflow.com/questions/5248915/execution-time-of-c-program
+
+tipo de gráfico: https://www.it-swarm.dev/pt/graph/como-voce-plota-graficos-de-barras-no-gnuplot/958079444/
+                 https://matplotlib.org/3.1.1/gallery/units/bar_unit_demo.html
