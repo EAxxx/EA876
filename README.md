@@ -2,7 +2,7 @@
 
 Prof. Tiago Fernandes Tavares
 
-E-mail: tavares [at] dca [dot] fee [dot] unicamp [dot] br
+E-mail: tiagoft [at] gmail [dot] com
 
 ## Informações sobre o curso
 * Ementa, calendário e critérios de avaliação: ver o Google Classroom da
